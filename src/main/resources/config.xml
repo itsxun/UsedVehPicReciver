@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--===================================外网===================================-->
+    <!--图片存放的绝对路径-->
+    <wan_dir_path>
+        D:\UsedVehPicReciver\build\libs\exploded\UsedCarPicUpload-0.0.1-SNAPSHOT.war\WEB-INF\classes\usedveh
+    </wan_dir_path>
+
+    <!--应该被替换掉的绝对路径前缀-->
+    <wan_path_replacement>
+        D:\UsedVehPicReciver\build\libs\exploded\UsedCarPicUpload-0.0.1-SNAPSHOT.war\WEB-INF\classes\
+    </wan_path_replacement>
+
+    <!--应该被替换成的url地址前缀-->
+    <wan_url_replacement>
+        http://192.168.31.145:8081/
+    </wan_url_replacement>
+
+    <base64_encode_prefix>
+        data:image/jpeg;base64,
+    </base64_encode_prefix>
+
+    <remote_notify_url>
+        http://218.4.111.162:9040/PoliceInServer/select.jsp?a=1493870280546&amp;db=SZDJ&amp;q=q={"who":"SZLP","api":"picUpload_wan","ver":"1","JYLSH":"{JYLSH}","ZPLX":"{ZPLX}","ZPDZ":"{ZPDZ}"}
+    </remote_notify_url>
+</configuration>
