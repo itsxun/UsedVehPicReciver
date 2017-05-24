@@ -21,7 +21,7 @@
     </base64_encode_prefix>
 
     <remote_notify_url>
-        http://wx.szjjzd.gov.cn:9040/PoliceInServer/select.jsp?&amp;db=SZDJ&amp;q={"who":"SZLP","api":"picUpload_wan","ver":"1","JYLSH":"{JYLSH}","ZPLX":"{ZPLX}","ZPDZ":"{ZPDZ}"}
+        http://wx.szjjzd.gov.cn:9040/PoliceInServer/select.jsp?&amp;db=SZDJ&amp;q={"who":"SZLP","api":"picUpload_wan","ver":"1","JYLSH":"{JYLSH}","ZPLX":"{ZPLX}","ZPDZ":"{ZPDZ}","TOKEN":"{TOKEN}"}
     </remote_notify_url>
 
     <wan_dir_path_pre>

@@ -37,8 +37,8 @@ public class PicUploadCtrl {
         Date date = new Date();
         String values = IOUtils.toString(req.getInputStream());
         Fallen fallen = gson.fromJson(values, Fallen.class);
-        if (fallen != null || fallen.getJylsh() != null || fallen.getZplx() != null || fallen.getPic() != null) {
-            return JsonResultUtil.resDispatcher("请提供正确的交易流水号与照片类型", 0);
+        if (fallen == null || fallen.getToken() == null || fallen.getJylsh() == null || fallen.getZplx() == null || fallen.getPic() == null) {
+            return JsonResultUtil.resDispatcher("请提供完整的Token，交易流水号与照片类型", 0);
         }
         File file = new File(StaticConfig.WanDirPath + File.separator + sdf.format(date) + File.separator + fallen.getJylsh());
         if (!file.isDirectory()) {
@@ -49,7 +49,7 @@ public class PicUploadCtrl {
         FileUtils.writeByteArrayToFile(file, Base64Util.decode(fallen.getPic().replace(StaticConfig.Base64EncodePrefix, "")));
 
         String res = file.getAbsolutePath().replace(StaticConfig.WanPathReplacement, StaticConfig.WanUrlReplacement).replace("\\", "/");
-        res = StaticConfig.RemoteNotifyUrl.replace("{JYLSH}", fallen.getJylsh()).replace("{ZPLX}", fallen.getZplx()).replace("{ZPDZ}", res);
+        res = StaticConfig.RemoteNotifyUrl.replace("{JYLSH}", fallen.getJylsh()).replace("{ZPLX}", fallen.getZplx()).replace("{ZPDZ}", res).replace("{TOKEN}", fallen.getToken());
         res = HttpUtil.get(res).replace("null(", "").replace(")", "");
 
         Callback callback = gson.fromJson(res, Callback.class);
