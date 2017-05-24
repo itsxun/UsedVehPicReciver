@@ -11,6 +11,15 @@ public class Fallen {
     private String pic;
     private String jylsh;
     private String zplx;
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     public String getPic() {
         return pic;
@@ -36,12 +45,4 @@ public class Fallen {
         this.zplx = zplx;
     }
 
-    @Override
-    public String toString() {
-        return "Fallen{" +
-                "pic='" + pic + '\'' +
-                ", jylsh='" + jylsh + '\'' +
-                ", zplx='" + zplx + '\'' +
-                '}';
-    }
 }

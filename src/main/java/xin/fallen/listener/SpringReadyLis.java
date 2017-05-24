@@ -14,6 +14,6 @@ public class SpringReadyLis implements ApplicationListener<ApplicationPreparedEv
     @Override
     public void onApplicationEvent(ApplicationPreparedEvent event) {
         ConfigLoader.load(FileFinder.find("config.xml"), StaticConfig.class);
-        log.info("config load success");
+        log.info("config load complete");
     }
 }
